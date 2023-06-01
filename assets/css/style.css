@@ -1,0 +1,518 @@
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+2. Remove default margin
+*/
+* {
+  border: none;
+  outline: none;
+  margin: 0;
+}
+
+/*
+3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+7. Remove built-in form typography styles
+*/
+input, textarea,
+button,
+#btn-active,
+#btn-secondry,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Inter-Bold";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter-Medium";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../fonts/inter-Medium.woff2") format("woff2");
+}
+
+
+button,
+#btn-active,
+#btn-secondry {
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#btn-active {
+  background-color: #eea02b;
+  color: #28293d;
+  font-family: "Inter-Bold";
+}
+
+#btn-secondry {
+  background: none;
+  border: 2px solid #6d7097;
+  color: white;
+  font-family: "Inter-Bold";
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 32px;
+  border-radius: 24px;
+  background-color: #2d2f45;
+}
+
+.card .card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card .card-info .card-id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card-info .card-id .checked-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #eea02b;
+}
+
+.card .card-info .card-id .checked-input span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.card .card-info .card-id p {
+  margin-left: 8px;
+  color: #eea02b;
+}
+
+.card .card-info .card-id p span {
+  font-family: "Inter-Bold";
+}
+
+.card .card-info .card-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card-info .card-actions .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card .card-info .card-actions #check {
+  border: 2px solid #68fcd6;
+}
+
+.card .card-info .card-actions #check svg {
+  border: none;
+}
+
+.card .card-info .card-actions #check svg path {
+  stroke: #68fcd6;
+}
+
+.card .card-info .card-actions #check:hover {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  background-color: #68fcd6;
+}
+
+.card .card-info .card-actions #check:hover svg {
+  border: none;
+}
+
+.card .card-info .card-actions #check:hover svg path {
+  stroke: white;
+}
+
+.card .card-info .card-actions #trash {
+  border: 2px solid #ff96a5;
+  margin: 0 32px;
+}
+
+.card .card-info .card-actions #trash svg {
+  border: none;
+}
+
+.card .card-info .card-actions #trash svg path {
+  fill: #ff96a5;
+}
+
+.card .card-info .card-actions #trash svg path:last-child {
+  stroke: #ff96a5;
+}
+
+.card .card-info .card-actions #trash:hover {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  background-color: #ff96a5;
+}
+
+.card .card-info .card-actions #trash:hover svg {
+  border: none;
+}
+
+.card .card-info .card-actions #trash:hover svg path {
+  stroke: white;
+}
+
+.card .card-info .card-actions #edit {
+  border: 2px solid #4ec1f3;
+}
+
+.card .card-info .card-actions #edit svg {
+  border: none;
+}
+
+.card .card-info .card-actions #edit svg path {
+  stroke: #4ec1f3;
+}
+
+.card .card-info .card-actions #edit:hover {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  background-color: #4ec1f3;
+}
+
+.card .card-info .card-actions #edit:hover svg {
+  border: none;
+}
+
+.card .card-info .card-actions #edit:hover svg path {
+  stroke: white;
+}
+
+.card .card-titles {
+  margin-top: 24px;
+}
+
+.card .card-titles h3 {
+  font-size: 24px;
+  font-family: "Inter-Bold";
+}
+
+.card .card-titles p {
+  margin-top: 16px;
+  color: #d5d5da;
+  font-size: 16px;
+}
+
+input, textarea {
+  outline: none;
+  background: none;
+  padding: 12px 32px;
+  border: 2px solid #6d7097;
+  color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+textarea {
+  resize: none;
+}
+
+#searchBox-input {
+  border: none;
+  padding: 0;
+}
+
+body {
+  background-color: #28293d;
+  font-family: "Inter-Medium";
+  color: white;
+}
+
+.container {
+  max-width: 1216px;
+  margin: 0 112px;
+}
+
+header #navbar .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
+
+header #main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 120px;
+}
+
+header #main .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 32px;
+  width: 598px;
+  background-color: #2d2f45;
+  border-radius: 24px;
+}
+
+header #main .left .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header #main .left .input-group input, header #main .left .input-group textarea {
+  width: 100%;
+}
+
+header #main .left .input-group textarea {
+  width: 100%;
+  margin-top: 32px;
+  height: 168px;
+}
+
+header #main .left .btn-group {
+  margin-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header #main .left .btn-group button, header #main .left .btn-group #btn-active, header #main .left .btn-group #btn-secondry {
+  width: 100%;
+}
+
+header #main .left .btn-group #btn-active {
+  margin-right: 20px;
+}
+
+header #main .right {
+  margin-left: 20px;
+  width: 598px;
+}
+
+header #main .right .searchBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px 32px;
+  border: 2px solid #6d7097;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+header #main .right .searchBox input, header #main .right .searchBox textarea {
+  margin-left: 12px;
+}
+
+header #main .right .searchBox #searchIcon svg path {
+  fill: rgba(255, 255, 255, 0.1);
+}
+
+header #main .right .items .card {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 567px) {
+  .container {
+    margin: 0 16px;
+  }
+  header #main .right .card .card-info {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        align-items: center;
+        justify-content: space-between
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    margin: 0 16px;
+  }
+  header #main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header #main .left {
+    width: 100%;
+  }
+  header #main .left .btn-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header #main .left .btn-group #btn-active {
+    margin-bottom: 24px;
+  }
+  header #main .right {
+    width: 100%;
+    margin-top: 64px;
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
